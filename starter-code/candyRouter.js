@@ -37,17 +37,18 @@ router.post('/', function(req,res) {
 });
 
 router.put('/:id', function(req,res) {
-	var id = req.params.id;
-	candies.forEach(function(el, index){
-		console.log(el);
-		console.log(el.name);
-		console.log(el.color);
-		if(el.id == id){
-			candies[index]= req.body;
-			console.log(el);
-			console.log(index);
-		}
-	});
+	// var id = req.params.id;
+	// candies.forEach(function(el, index){
+	// 	console.log(el);
+	// 	console.log(el.name);
+	// 	console.log(el.color);
+	// 	if(el.id == id){
+	// 		candies[index]= req.body;
+	// 		console.log(el);
+	// 		console.log(index);
+	// 	}
+	// });
+	candies[req.params.id-1]=req.body;
 	console.log("update");
 	console.log(req.body);
 	res.end();
